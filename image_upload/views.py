@@ -14,6 +14,11 @@ def upload_file(request):
             form = UploadImageForm(request.POST, request.FILES)
             if form.is_valid():
                 form.save()
+        ##update
+        if image:
+            form = UploadImageForm(request.POST, request.FILES, instance=image)
+            if form.is_valid():
+                form.save()
 
         image = _get_image(name=request.POST['name'])
         return redirect(image)
