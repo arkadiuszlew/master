@@ -5,4 +5,5 @@ from image_upload import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.upload_file, name='home'),
+    path('image/<name>/', views.image_view, name='image-detail'),
 ]
