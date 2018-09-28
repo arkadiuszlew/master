@@ -27,7 +27,6 @@ class UploadImageTests(TestCase):
             response = self.client.post(url, data, follow=True)
 
             self.assertEquals(response.status_code, 200)
-            self.assertTemplateUsed('image/blue.html')
 
     def test_get_image(self):
         url = reverse('image-detail', kwargs={'name': 'blue'})
@@ -49,5 +48,4 @@ class UploadImageTests(TestCase):
             response = self.client.post(url, data, follow=True)
 
             self.assertEquals(response.status_code, 200)
-            self.assertTemplateUsed('image/blue.html')
             self.assertEquals(len(images), 1)
