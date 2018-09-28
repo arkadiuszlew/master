@@ -8,4 +8,4 @@ class Users_image(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def get_absolute_url(self):
-        return reverse('image-detail', args=[self.name]) 
+        return reverse('image-detail', args=[self.name])
